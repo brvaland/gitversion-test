@@ -15,3 +15,8 @@ jobs:
         with:
           tag_prefix: "v"
           version_from_branch: true
+          debug: true      
+      - name: Print Diagnostic Output
+        run: echo "$DEBUG_OUTPUT"
+        env:
+          DEBUG_OUTPUT: ${{ steps.version.outputs.debug_output }}      
